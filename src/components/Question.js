@@ -13,11 +13,11 @@ const Question = ({
     if (!question) return [];
     const { correct_answer, incorrect_answers } = question;
     return [...incorrect_answers, correct_answer].sort(() => Math.random() - 0.5);
-  }, [question?.question, question?.correct_answer, question?.incorrect_answers]);
+  }, [question]);
 
   if (!question) return null;
 
-  const { question: questionText, correct_answer, incorrect_answers } = question;
+  const { question: questionText, correct_answer } = question;
 
   const getAnswerClassName = (answer) => {
     if (!isAnswered) {
